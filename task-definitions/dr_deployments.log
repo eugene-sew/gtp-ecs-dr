@@ -1,0 +1,3 @@
+20250710-151720: Deployed arn:aws:ecs:eu-central-1:344837150589:task-definition/dev-bmdb:1 to eu-central-1
+20250710-161634: Deployed arn:aws:ecs:eu-central-1:344837150589:task-definition/dev-bmdb:2 to eu-central-1
+20250711-081340: Deployed arn:aws:ecs:eu-central-1:344837150589:task-definition/dev-bmdb:3 to eu-central-1

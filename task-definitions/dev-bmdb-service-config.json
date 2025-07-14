@@ -1,0 +1,231 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:eu-west-1:344837150589:service/dev-bmdb-cluster/dev-bmdb-service",
+            "serviceName": "dev-bmdb-service",
+            "clusterArn": "arn:aws:ecs:eu-west-1:344837150589:cluster/dev-bmdb-cluster",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:344837150589:targetgroup/dev-bmdb-tg/657babdaa972e15c",
+                    "containerName": "bmdb",
+                    "containerPort": 80
+                }
+            ],
+            "serviceRegistries": [],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "capacityProviderStrategy": [
+                {
+                    "capacityProvider": "FARGATE_SPOT",
+                    "weight": 1,
+                    "base": 0
+                }
+            ],
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:eu-west-1:344837150589:task-definition/dev-bmdb:1",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": true,
+                    "rollback": true
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/9007041757392702843",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:eu-west-1:344837150589:task-definition/dev-bmdb:1",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2025-07-10T09:17:33.470000+00:00",
+                    "updatedAt": "2025-07-10T13:36:25.787000+00:00",
+                    "capacityProviderStrategy": [
+                        {
+                            "capacityProvider": "FARGATE_SPOT",
+                            "weight": 1,
+                            "base": 0
+                        }
+                    ],
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0c64808563b983d44",
+                                "subnet-0239c15b9fbe9be83",
+                                "subnet-0f7101e329271d203"
+                            ],
+                            "securityGroups": [
+                                "sg-0eda85bbba9b5c2fd"
+                            ],
+                            "assignPublicIp": "DISABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/9007041757392702843 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::344837150589:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "c327777e-a611-4831-9890-03d299142b5b",
+                    "createdAt": "2025-07-11T03:19:49.467000+00:00",
+                    "message": "(service dev-bmdb-service) has reached a steady state."
+                },
+                {
+                    "id": "52f3c10f-0629-4143-bcc3-17919da8b195",
+                    "createdAt": "2025-07-10T21:19:34.590000+00:00",
+                    "message": "(service dev-bmdb-service) has reached a steady state."
+                },
+                {
+                    "id": "c3dc27c6-8cbe-46f3-b13a-7431577a7379",
+                    "createdAt": "2025-07-10T15:18:59.425000+00:00",
+                    "message": "(service dev-bmdb-service) has reached a steady state."
+                },
+                {
+                    "id": "88973fb8-c864-4edc-ac13-c631c1591371",
+                    "createdAt": "2025-07-10T13:36:25.796000+00:00",
+                    "message": "(service dev-bmdb-service) has reached a steady state."
+                },
+                {
+                    "id": "8b0f5d08-4f4e-47c5-b76e-2669748c2418",
+                    "createdAt": "2025-07-10T13:36:25.795000+00:00",
+                    "message": "(service dev-bmdb-service) (deployment ecs-svc/9007041757392702843) deployment completed."
+                },
+                {
+                    "id": "a45d2605-cc9d-4243-aadb-c2663a70c966",
+                    "createdAt": "2025-07-10T13:35:58.042000+00:00",
+                    "message": "(service dev-bmdb-service) rolling back to deployment ecs-svc/9007041757392702843."
+                },
+                {
+                    "id": "96a5ea0b-402a-4ef7-b721-042c6679c258",
+                    "createdAt": "2025-07-10T13:35:58.041000+00:00",
+                    "message": "(service dev-bmdb-service) (deployment ecs-svc/8795752461039034264) deployment failed: tasks failed to start."
+                },
+                {
+                    "id": "3d5fa959-87bc-4675-8fbd-52ce78dbfa16",
+                    "createdAt": "2025-07-10T13:34:46.543000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task da41443135a64d39ba3a0cad7ee988f7)."
+                },
+                {
+                    "id": "094adc24-a798-400b-a2f4-3d81f0ab54ef",
+                    "createdAt": "2025-07-10T13:29:29.324000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 0a3eb4a184c94820ae06e59cde946188)."
+                },
+                {
+                    "id": "6437a2f8-3f28-4e57-991b-48a0786104ef",
+                    "createdAt": "2025-07-10T13:28:21.483000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 8ccc416bcfe64cfbbd787d20b529be0a)."
+                },
+                {
+                    "id": "c47bb352-71fe-4472-805e-e094999120fb",
+                    "createdAt": "2025-07-10T13:27:20.612000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 7f6990186a3e4cac8ef62f226d0afca5)."
+                },
+                {
+                    "id": "a028f9c1-f937-4fae-aff9-9de62e597ee8",
+                    "createdAt": "2025-07-10T09:18:31.928000+00:00",
+                    "message": "(service dev-bmdb-service) has reached a steady state."
+                },
+                {
+                    "id": "cf559b0d-b708-48bc-90aa-fcc1679f1f1a",
+                    "createdAt": "2025-07-10T09:18:31.927000+00:00",
+                    "message": "(service dev-bmdb-service) (deployment ecs-svc/9007041757392702843) deployment completed."
+                },
+                {
+                    "id": "447fa265-49d1-446c-9478-b1cbb714fbd9",
+                    "createdAt": "2025-07-10T09:18:20.948000+00:00",
+                    "message": "(service dev-bmdb-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-west-1:344837150589:targetgroup/dev-bmdb-tg/657babdaa972e15c)"
+                },
+                {
+                    "id": "6b38202e-69a1-412c-b2fe-a4b5f502d2c8",
+                    "createdAt": "2025-07-10T09:17:50.853000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 0d20ac76dcd34c94b51580fbf6bc30cb)."
+                },
+                {
+                    "id": "92e0c7fa-6733-4bca-831d-83798c6ef2af",
+                    "createdAt": "2025-07-10T09:00:11.807000+00:00",
+                    "message": "(service dev-bmdb-service) (deployment ecs-svc/8894286627880567651) deployment failed: tasks failed to start."
+                },
+                {
+                    "id": "27fce461-d226-4ae4-ba01-735bccbd5049",
+                    "createdAt": "2025-07-10T08:56:07.984000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task d7d8b7b2428f44c8ad18376667d53e1f)."
+                },
+                {
+                    "id": "e0edce35-03e2-4e3e-8ce0-45e4ff30a69a",
+                    "createdAt": "2025-07-10T08:48:57.737000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 7a42a9d922c64969a6101b145bae8106)."
+                },
+                {
+                    "id": "5eb14e6c-03cc-4979-a3d7-acd1746d57e9",
+                    "createdAt": "2025-07-10T08:46:21.181000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 63583fc9068e4e49aaa767d1a34461a8)."
+                },
+                {
+                    "id": "d8996bf6-346b-4520-822d-fa282fc0a787",
+                    "createdAt": "2025-07-10T08:43:47.225000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 2c4e9d4a0ea54697ac8fd63942df50ed)."
+                },
+                {
+                    "id": "bb68290c-7b07-4746-8d67-0346ba9e9d4f",
+                    "createdAt": "2025-07-10T08:27:53.726000+00:00",
+                    "message": "(service dev-bmdb-service) (deployment ecs-svc/4050545587706724696) deployment failed: tasks failed to start."
+                },
+                {
+                    "id": "d73f5a18-5290-47eb-8839-d532578169a3",
+                    "createdAt": "2025-07-10T08:26:22.483000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task db28fa11ea9b4e77a5a9be3871e2bf50)."
+                },
+                {
+                    "id": "baaf2f96-1102-4431-926a-1ae13e6d411c",
+                    "createdAt": "2025-07-10T08:23:41.997000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 0e7125529d96411fb3da55e927d9bbf2)."
+                },
+                {
+                    "id": "b9b2a207-1572-4f5a-95c3-84a8215ce0d7",
+                    "createdAt": "2025-07-10T08:20:59.288000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 4517a4a3e9c6472f8c2376109430f011)."
+                },
+                {
+                    "id": "a683ab37-cd21-4a11-b1db-8b0bcb705de3",
+                    "createdAt": "2025-07-10T08:18:15.268000+00:00",
+                    "message": "(service dev-bmdb-service) has started 1 tasks: (task 31c84987cf994b019a8a5cf9425a2b9c)."
+                }
+            ],
+            "createdAt": "2025-07-10T08:17:54.612000+00:00",
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0c64808563b983d44",
+                        "subnet-0239c15b9fbe9be83",
+                        "subnet-0f7101e329271d203"
+                    ],
+                    "securityGroups": [
+                        "sg-0eda85bbba9b5c2fd"
+                    ],
+                    "assignPublicIp": "DISABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 0,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::344837150589:user/eugene",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "DISABLED"
+        }
+    ],
+    "failures": []
+}
