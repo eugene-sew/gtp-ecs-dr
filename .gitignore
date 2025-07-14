@@ -1,3 +1,4 @@
 ecli-bmdb-task-def-revision3.json
 .terraform
 
+scripts/task-def-example.json

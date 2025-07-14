@@ -14,7 +14,7 @@ This project's documentation is organized as follows:
 
 ## Architecture Diagram
 
-![ECS Fargate DR Architecture](diagrams/ecs-fargate-dr-architecture.svg)
+![ECS Fargate DR Architecture](./diagrams/ecs-fargate-dr-architecture.png)
 
 ## Architecture Overview
 
