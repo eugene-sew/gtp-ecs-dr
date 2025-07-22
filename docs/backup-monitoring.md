@@ -130,7 +130,6 @@ Alerts are sent via SNS topics which can be configured to deliver to:
 To configure alert recipients:
 
 1. Subscribe to the SNS topic `{environment}-{app_name}-alerts`
-2. Or update the Terraform configuration with your preferred delivery method
 
 ## Implementation Notes
 

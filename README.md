@@ -149,7 +149,3 @@ export RECREATE_REPLICA=true
 - **RDS Read Replica Recreation**: After promoting a read replica to a standalone database, AWS RDS does not support converting it back to a read replica. The `dr-deactivate.sh` script includes logic to recreate the cross-region read replica using Terraform.
 
 - **Regular Testing**: Regular testing of DR procedures is essential to ensure readiness.
-
-## Next Steps
-
-For the implementation roadmap and future enhancements, see the [DR Implementation Plan](docs/dr-implementation-plan.md).

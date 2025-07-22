@@ -24,23 +24,27 @@ The Disaster Recovery solution uses a **module-based approach** to create a stan
 ## Infrastructure Components
 
 ### 1. DR Module (`terraform/modules/dr/main.tf`)
+
 - Creates VPC, subnets, ECS cluster, and optionally RDS in DR region
 - Starts with 0 ECS tasks to minimize costs
 - Includes scheduled scaling for business hours
 - References the same Docker images as the primary region
 
 ### 2. Cross-Region RDS Read Replica
+
 - Created via Terraform (modules/dr/rds_replica.tf)
 - Encrypted with DR region KMS key
 - Monitored for replication lag
 - Can be promoted to standalone DB during failover
 
 ### 3. Provider Configuration (`terraform/main.tf`)
+
 - Uses AWS provider aliases for multi-region deployment
 - Primary region: Default provider
 - DR region: `aws.dr` provider
 
 ### 4. Conditional Deployment
+
 - DR infrastructure is only created when `enable_dr = true`
 - All DR resources are tagged with `-dr` suffix
 
@@ -71,10 +75,10 @@ This script will:
 
 ### Step 2: Promote the Database (if needed)
 
-If you need to promote the read replica to a standalone database:
+In orderd to promote the read replica to a standalone database:
 
 ```bash
-PROMOTE_DB=true ./scripts/dr-activate.sh
+./scripts/dr-activate.sh
 ```
 
 This will:

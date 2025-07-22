@@ -127,7 +127,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   source_arn    = aws_cloudwatch_event_rule.task_def_sync_schedule.arn
 }
 
-# Generate Lambda function code
+# Lambda function code
 resource "local_file" "lambda_code" {
   content  = <<-EOT
 import boto3

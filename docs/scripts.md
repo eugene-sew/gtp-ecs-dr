@@ -1,6 +1,6 @@
 # ECS Fargate Scripts Documentation
 
-This document details the utility scripts used for managing the ECS Fargate application with disaster recovery capabilities.
+This document details the consolidated utility scripts used for managing the ECS Fargate application with disaster recovery capabilities.
 
 ## Table of Contents
 
@@ -16,13 +16,10 @@ The `dr-activate.sh` script activates the disaster recovery environment by scali
 
 ### Usage
 
-```bash
+````bash
 # Basic usage (scale up ECS service in DR region)
 ./scripts/dr-activate.sh
 
-# Promote read replica to standalone database
-PROMOTE_DB=true ./scripts/dr-activate.sh
-```
 
 ### Key Features
 
@@ -57,7 +54,7 @@ SOURCE_REGION=eu-west-1 DR_REGION=eu-central-1 ENVIRONMENT=dev APP_NAME=bmdb ./s
 
 # Skip database synchronization
 SYNC_DATA=false ./scripts/dr-deactivate.sh
-```
+````
 
 ### Key Features
 
@@ -150,20 +147,20 @@ SOURCE_REGION=eu-west-1 DR_REGION=eu-central-1 ENVIRONMENT=dev APP_NAME=bmdb RET
 
 The following table summarizes all environment variables used across the scripts:
 
-| Variable | Description | Default | Used In |
-|----------|-------------|---------|---------|
-| `SOURCE_REGION` | Primary AWS region | eu-west-1 | All scripts |
-| `DR_REGION` | DR AWS region | eu-central-1 | All scripts |
-| `ENVIRONMENT` | Environment name | dev | All scripts |
-| `APP_NAME` | Application name | bmdb | All scripts |
-| `DESIRED_COUNT` | Number of ECS tasks in DR | 1 | dr-activate.sh |
-| `PRIMARY_DESIRED_COUNT` | Number of ECS tasks in primary | 1 | dr-deactivate.sh |
-| `PROMOTE_DB` | Whether to promote read replica | false | dr-activate.sh |
-| `SYNC_DATA` | Whether to synchronize database data | false | dr-deactivate.sh |
-| `SYNC_METHOD` | Method for data synchronization | dump | dr-deactivate.sh |
-| `RECREATE_REPLICA` | Whether to recreate read replica | true | dr-deactivate.sh |
-| `TERRAFORM_DIR` | Path to Terraform environment directory | ./terraform/environments/dev | dr-deactivate.sh |
-| `DNS_TTL` | TTL for DNS record changes | 60 | dr-activate.sh, dr-deactivate.sh |
-| `RETENTION_DAYS` | Days to keep snapshots | 7 | manage-rds-snapshots.sh |
-| `CROSS_REGION_COPY` | Whether to copy snapshots to DR | true | manage-rds-snapshots.sh |
-| `BACKUP_BUCKET` | S3 bucket for backups | {APP_NAME}-{ENVIRONMENT}-backups | backup-task-definitions.sh |
+| Variable                | Description                             | Default                          | Used In                          |
+| ----------------------- | --------------------------------------- | -------------------------------- | -------------------------------- |
+| `SOURCE_REGION`         | Primary AWS region                      | eu-west-1                        | All scripts                      |
+| `DR_REGION`             | DR AWS region                           | eu-central-1                     | All scripts                      |
+| `ENVIRONMENT`           | Environment name                        | dev                              | All scripts                      |
+| `APP_NAME`              | Application name                        | bmdb                             | All scripts                      |
+| `DESIRED_COUNT`         | Number of ECS tasks in DR               | 1                                | dr-activate.sh                   |
+| `PRIMARY_DESIRED_COUNT` | Number of ECS tasks in primary          | 1                                | dr-deactivate.sh                 |
+| `PROMOTE_DB`            | Whether to promote read replica         | true                             | dr-activate.sh                   |
+| `SYNC_DATA`             | Whether to synchronize database data    | false                            | dr-deactivate.sh                 |
+| `SYNC_METHOD`           | Method for data synchronization         | dump                             | dr-deactivate.sh                 |
+| `RECREATE_REPLICA`      | Whether to recreate read replica        | true                             | dr-deactivate.sh                 |
+| `TERRAFORM_DIR`         | Path to Terraform environment directory | ./terraform/environments/dev     | dr-deactivate.sh                 |
+| `DNS_TTL`               | TTL for DNS record changes              | 60                               | dr-activate.sh, dr-deactivate.sh |
+| `RETENTION_DAYS`        | Days to keep snapshots                  | 7                                | manage-rds-snapshots.sh          |
+| `CROSS_REGION_COPY`     | Whether to copy snapshots to DR         | true                             | manage-rds-snapshots.sh          |
+| `BACKUP_BUCKET`         | S3 bucket for backups                   | {APP_NAME}-{ENVIRONMENT}-backups | backup-task-definitions.sh       |
